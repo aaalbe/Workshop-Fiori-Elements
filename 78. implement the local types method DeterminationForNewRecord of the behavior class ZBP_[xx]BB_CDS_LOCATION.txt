@@ -21,7 +21,7 @@ CLASS lhc_location IMPLEMENTATION.
         RESULT DATA(lt_location).
 
     MOVE-CORRESPONDING  lt_location TO lt_update.
-    SELECT MAX( locationid ) FROM z00_dt_location INTO @DATA(locationid).
+
     LOOP AT lt_update ASSIGNING FIELD-SYMBOL(<location>).
       IF <location>-description IS INITIAL.
         <location>-description = |No description available|.
